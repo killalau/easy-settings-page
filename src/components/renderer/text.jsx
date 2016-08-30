@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import TextField from 'material-ui/TextField';
 
-export default function(props){
+function TextRenderer(props) {
     let {id, label, default: defaultValue, value, info, onChange} = props;
     let v = typeof value !== 'undefined' ? value : defaultValue;
     let elId = `setting_${id}`;
@@ -12,8 +12,19 @@ export default function(props){
             value={v}
             hintText={info}
             floatingLabelText={label}
-            onChange={onChange}
+            onChange={(event, newValue) => onChange(id, newValue) }
             fullWidth={true}
             />
     );
 }
+
+TextRenderer.propTypes = {
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    default: PropTypes.string,
+    value: PropTypes.string,
+    info: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+};
+
+export default TextRenderer;
