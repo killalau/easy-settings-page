@@ -9,7 +9,7 @@ function TextareaRenderer(props) {
         <TextField
             id={elId}
             name={id}
-            value={v}
+            value={v || ''}
             hintText={info}
             floatingLabelText={label}
             onChange={(event, newValue) => onChange(id, newValue) }

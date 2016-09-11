@@ -49,6 +49,19 @@ App.childContextTypes = {
 
 const schema = [
     {
+        "name": "Multiple",
+        "settings": [
+            {
+                "type": "text",
+                "id": "banners",
+                "label": "Home Pages Banners",
+                "info": "Add one more banners",
+                "default": [ '1', '2', '3' ],
+                "multiple": true
+            }
+        ]
+    },
+    {
         "name": "Basic",
         "icon": "32",
         "settings": [

@@ -9,7 +9,7 @@ function TextRenderer(props) {
         <TextField
             id={elId}
             name={id}
-            value={v}
+            value={v || ''}
             hintText={info}
             floatingLabelText={label}
             onChange={(event, newValue) => onChange(id, newValue) }
@@ -20,7 +20,7 @@ function TextRenderer(props) {
 
 TextRenderer.propTypes = {
     id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.string,
     default: PropTypes.string,
     value: PropTypes.string,
     info: PropTypes.string.isRequired,
